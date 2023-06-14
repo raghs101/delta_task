@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><% database1 %></p>
+    <% for(var i=0;i<database1.length;i++){ %>
+        <p><% database1[i].Name %></p>
+        <p><% database1[i].RollNumber %></p>
+        <p><% database1[i].Hostel %></p>
+        <p><% database1[i].Room %></p>
+        <p><% database1[i].Mess%></p>
+        <p><% database1[i].MessPref %></p>
+    <% } %>
+    <form method="post" action="/" class="">
+        
+        <button type="submit" name="button">logout</button>
+        </form>
+</body>
+</html>

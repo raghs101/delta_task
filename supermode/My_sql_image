@@ -1,0 +1,4 @@
+FROM mysql:latest
+ENV MYSQL_USER php_docker
+ENV MYSQL_PASSWORD password
+ENV MYSQL_ROOT_PASSWORD HAD

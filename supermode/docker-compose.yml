@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apache_img
+    ports:
+      - "80:80"
+    volumes:
+      - /home/HAD
+  db:
+    build:
+      context: .
+      dockerfile: My_sql_image
+    environment:
+      - MYSQL_USER=php_docker
+      - MYSQL_DATABASE=php_docker
+      - MYSQL_ROOT_PASSWORD=HAD
+      - MYSQL_PASSWORD=password
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d" # sync files with container
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306

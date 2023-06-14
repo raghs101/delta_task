@@ -1,0 +1,10 @@
+FROM ubuntu:18.04
+RUN apt-get update && apt-get install -y apache2
+RUN mkdir -p /exec
+RUN mkdir -p /home/HAD
+COPY mess.txt /home/HAD
+COPY . /exec
+
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+

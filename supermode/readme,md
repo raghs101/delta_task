@@ -1,0 +1,2 @@
+Mount the volumes while running docker compose file.
+databse code is there in db which inserts data into database sql through initdb
